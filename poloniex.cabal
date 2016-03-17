@@ -1,0 +1,79 @@
+name:                poloniex
+version:             0.1.0.0
+synopsis:            Poloniex exchange API
+description:         Please see README.md
+homepage:            http://github.com/cmahon/kraken
+license:             BSD3
+license-file:        LICENSE
+author:              Chris Mahon
+maintainer:          cnmahon@gmail.com
+copyright:           Copyright (c) 2016 Chris Mahon
+category:            tbc
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  default-language:    Haskell2010
+  ghc-options:         -Wall -fno-warn-orphans
+  hs-source-dirs:      src
+  exposed-modules:     Poloniex.API
+                     , Poloniex.Rest
+  build-depends:       aeson
+                     , base >= 4.7 && < 5
+                     , base64-bytestring
+                     , byteable
+                     , bytestring
+                     , cryptohash
+                     , data-default
+                     , either
+                     , hashable
+                     , scientific
+                     , servant
+                     , servant-client
+                     , text
+                     , time
+                     , transformers
+                     , unordered-containers
+                     , vector
+                     , websockets
+                     , wuss
+  default-extensions:  DataKinds
+                       DeriveGeneric
+                       DeriveAnyClass
+                       FlexibleInstances
+                       GeneralizedNewtypeDeriving
+                       KindSignatures
+                       LambdaCase
+                       OverloadedStrings
+                       RecordWildCards
+                       ScopedTypeVariables
+                       TypeOperators
+
+executable poloniex
+  default-language:    Haskell2010
+  ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  build-depends:       base
+                     , bytestring
+                     , data-default
+                     , poloniex
+                     , text
+                     , transformers
+  default-extensions:  OverloadedStrings
+
+test-suite spec
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , poloniex
+                     , hspec
+                     , QuickCheck
+                     
+source-repository head
+  type:     git
+  location: https://github.com/cmahon/kraken
