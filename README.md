@@ -1,6 +1,6 @@
 # Poloniex
 
-Haskell bindings to the [Poloniex](https://poloniex.com/support/api/) API. 
+Haskell bindings to the [Poloniex](https://poloniex.com/) exchange API.
 
 Early stage work in progress.
 
@@ -12,7 +12,7 @@ Early stage work in progress.
   * [ ] Typed responses
 * [ ] Private trading services
 * [ ] Websocket services (WAMP-based)
-  * [X] Fork and upgrade [haskell-wamp][haskell-wamp] package
+  * [X] Fork and upgrade haskell-wamp package
   * [X] Prototype
   * [ ] Ticker service
   * [ ] Orderbook service
@@ -34,3 +34,4 @@ stack exec poloniex
 ## References/Sources
 
 * [haskell-wamp](https://github.com/mulderr/haskell-wamp)
+* [Poloniex API](https://poloniex.com/support/api/)
