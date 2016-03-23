@@ -11,10 +11,9 @@ import           Data.Text (Text)
 import           Servant.API
 import           Servant.Client
 
------------------------------------------------------------------------------
+import           Poloniex.Types
 
-type Host = String
-type Port = Int
+-----------------------------------------------------------------------------
 
 restHost :: Host
 restHost = "poloniex.com"

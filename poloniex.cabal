@@ -19,6 +19,8 @@ library
   hs-source-dirs:      src
   exposed-modules:     Poloniex.API
                      , Poloniex.Rest
+                     , Poloniex.Socket
+                     , Poloniex.Types
   build-depends:       aeson
                      , base >= 4.7 && < 5
                      , base64-bytestring
@@ -28,6 +30,7 @@ library
                      , data-default
                      , either
                      , hashable
+                     , mtl
                      , scientific
                      , servant
                      , servant-client
@@ -36,15 +39,17 @@ library
                      , transformers
                      , unordered-containers
                      , vector
-                     , websockets
-                     , wuss
+                     , wamp-client
+                     , wamp-common
   default-extensions:  DataKinds
+                       DeriveFunctor
                        DeriveGeneric
-                       DeriveAnyClass
+                       -- DeriveAnyClass
                        FlexibleInstances
-                       GeneralizedNewtypeDeriving
+                       -- GeneralizedNewtypeDeriving
                        KindSignatures
                        LambdaCase
+                       MultiParamTypeClasses
                        OverloadedStrings
                        RecordWildCards
                        ScopedTypeVariables
